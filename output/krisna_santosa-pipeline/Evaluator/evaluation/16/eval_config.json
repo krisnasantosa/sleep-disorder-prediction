@@ -1,0 +1,41 @@
+{
+  "evalConfig": {
+    "modelSpecs": [
+      {
+        "labelKey": "sleep_disorder_xf"
+      }
+    ],
+    "slicingSpecs": [
+      {}
+    ],
+    "metricsSpecs": [
+      {
+        "metrics": [
+          {
+            "className": "ExampleCount"
+          },
+          {
+            "className": "SparseCategoricalAccuracy"
+          },
+          {
+            "className": "SparseCategoricalAccuracy",
+            "threshold": {
+              "valueThreshold": {
+                "lowerBound": 0.85
+              }
+            }
+          }
+        ],
+        "modelNames": [
+          ""
+        ]
+      }
+    ]
+  },
+  "version": "0.42.0",
+  "dataLocation": "<user provided PCollection>",
+  "fileFormat": "<unknown>",
+  "modelLocations": {
+    "": "output\\krisna_santosa-pipeline\\Trainer\\model\\14\\Format-Serving"
+  }
+}

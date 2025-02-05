@@ -1,0 +1,234 @@
+feature {
+  name: "age"
+  type: INT
+  presence {
+    min_fraction: 1.0
+    min_count: 1
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "blood_pressure"
+  type: BYTES
+  domain: "blood_pressure"
+  presence {
+    min_fraction: 1.0
+    min_count: 1
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "bmi_category"
+  type: BYTES
+  domain: "bmi_category"
+  presence {
+    min_fraction: 1.0
+    min_count: 1
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "daily_steps"
+  type: INT
+  presence {
+    min_fraction: 1.0
+    min_count: 1
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "gender"
+  type: BYTES
+  domain: "gender"
+  presence {
+    min_fraction: 1.0
+    min_count: 1
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "heart_rate"
+  type: INT
+  presence {
+    min_fraction: 1.0
+    min_count: 1
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "occupation"
+  type: BYTES
+  domain: "occupation"
+  presence {
+    min_fraction: 1.0
+    min_count: 1
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "person_id"
+  type: INT
+  presence {
+    min_fraction: 1.0
+    min_count: 1
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "physical_activity_level"
+  type: INT
+  presence {
+    min_fraction: 1.0
+    min_count: 1
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "quality_of_sleep"
+  type: INT
+  presence {
+    min_fraction: 1.0
+    min_count: 1
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "sleep_disorder"
+  type: BYTES
+  domain: "sleep_disorder"
+  presence {
+    min_fraction: 1.0
+    min_count: 1
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "sleep_duration"
+  type: FLOAT
+  presence {
+    min_fraction: 1.0
+    min_count: 1
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+feature {
+  name: "stress_level"
+  type: INT
+  presence {
+    min_fraction: 1.0
+    min_count: 1
+  }
+  shape {
+    dim {
+      size: 1
+    }
+  }
+}
+string_domain {
+  name: "blood_pressure"
+  value: "115/75"
+  value: "115/78"
+  value: "117/76"
+  value: "118/75"
+  value: "119/77"
+  value: "120/80"
+  value: "122/80"
+  value: "125/80"
+  value: "125/82"
+  value: "126/83"
+  value: "128/84"
+  value: "128/85"
+  value: "129/84"
+  value: "130/85"
+  value: "131/86"
+  value: "132/87"
+  value: "135/90"
+  value: "139/91"
+  value: "140/90"
+  value: "140/95"
+  value: "142/92"
+  value: "118/76"
+  value: "121/79"
+  value: "130/86"
+  value: "135/88"
+}
+string_domain {
+  name: "bmi_category"
+  value: "Normal"
+  value: "Normal Weight"
+  value: "Obese"
+  value: "Overweight"
+}
+string_domain {
+  name: "gender"
+  value: "Female"
+  value: "Male"
+}
+string_domain {
+  name: "occupation"
+  value: "Accountant"
+  value: "Doctor"
+  value: "Engineer"
+  value: "Lawyer"
+  value: "Manager"
+  value: "Nurse"
+  value: "Salesperson"
+  value: "Scientist"
+  value: "Software Engineer"
+  value: "Teacher"
+  value: "Sales Representative"
+}
+string_domain {
+  name: "sleep_disorder"
+  value: "Insomnia"
+  value: "None"
+  value: "Sleep Apnea"
+}

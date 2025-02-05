@@ -1,0 +1,17 @@
+# Submission 1: Prediksi Gangguan Tidur (Sleep Disorder)
+Nama: Krisna Santosa
+
+Username dicoding: `krisna_santosa`
+
+| | Deskripsi |
+| ----------- | ----------- |
+| **Dataset** | [Sleep Health and Lifestyle Dataset](https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset/data) dari Kaggle yang berisi 400 record dengan 13 atribut mencakup faktor demografi (usia, gender, pekerjaan), faktor tidur (durasi tidur, kualitas tidur), faktor gaya hidup (tingkat aktivitas fisik, tingkat stres, kategori BMI), dan indikator kesehatan (tekanan darah, detak jantung, jumlah langkah harian). Target variabel berupa gangguan tidur yang terdiri dari tiga kategori: Tidak Ada, Insomnia, dan Sleep Apnea. |
+| **Masalah** | Gangguan tidur, seperti insomnia dan sleep apnea, memengaruhi kualitas hidup dan kesehatan individu. Deteksi dini gangguan tidur sangat penting untuk memberikan intervensi yang tepat. Namun, tantangan utama adalah kurangnya sistem yang dapat memprediksi gangguan tidur secara akurat berdasarkan faktor-faktor gaya hidup dan kesehatan. Oleh karena itu, dibutuhkan pengembangan model prediksi yang dapat mengklasifikasikan gangguan tidur berdasarkan data demografi, gaya hidup, dan indikator kesehatan yang relevan. |
+| **Solusi Machine Learning** | Mengembangkan model klasifikasi multiclass untuk memprediksi gangguan tidur (Tidak Ada, Insomnia, Sleep Apnea) berdasarkan data gaya hidup dan kesehatan. Model ini akan menggunakan Deep Neural Network (DNN) dengan hyperparameter tuning menggunakan Keras Tuner (Hyperband), serta didukung oleh TFX untuk membangun end-to-end pipeline dari data ingestion hingga serving model. Target accuracy minimal 85%. |
+| **Metode Pengolahan** | - Preprocessing dengan TFX: Z-score scaling untuk fitur numerik<br>- Encoding kategorikal menggunakan vocabulary<br>- Transformasi data otomatis dengan komponen `Transform` TFX. |
+| **Arsitektur Model** | - Input layer untuk fitur numerik dengan Batch Normalization dan Embedding Layer untuk fitur kategorikal.<br>- Jumlah hidden layers dan unit neuron dioptimalkan melalui hyperparameter tuning (2-4 hidden layers, 32-256 unit per layer).<br>- Menggunakan Dropout Layer (rate 0.1-0.5) dan Batch Normalization untuk mengurangi overfitting.<br>- Output layer dengan Softmax Activation untuk klasifikasi 3 kelas (Tidak Ada, Insomnia, Sleep Apnea). |
+| **Metrik Evaluasi** | Metrik evaluasi yang digunakan adalah accuracy untuk mengukur tingkat kesesuaian prediksi model dengan label sebenarnya dalam klasifikasi gangguan tidur, dengan rumus $\text{Accuracy} = \frac{\text{Jumlah Prediksi Benar}}{\text{Total Data}}$. |
+| **Performa Model** | Akurasi model pada proses training menghasilkan performa yang sangat baik yaitu dengan accuracy 93% dan validation_accuracy 85% dalam jumlah epoch yang singkat yaitu 15/30 Epochs. Secara keseluruhan dalam proses evaluasi menggunakan tfx mendapatkan akurasi 86% pada sparse_categorical_accuracy. |
+| Opsi deployment | Model di-deploy menggunakan TensorFlow Serving di Railway, yang memungkinkan hosting model machine learning dengan infrastruktur yang scalable dan mudah dikelola. Railway dipilih karena kemudahan integrasi dengan pipeline TFX dan fleksibilitas dalam deployment berbasis container. |
+| Web app | Tautan web app yang digunakan untuk mengakses model serving. Contoh: [sleep-disorder-predictor](https://)|
+| Monitoring | Deksripsi terkait hasil monitoring dari model serving |
