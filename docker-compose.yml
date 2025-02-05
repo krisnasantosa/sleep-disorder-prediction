@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  tf-serving:
+    build:
+      context: .
+    container_name: tf-serving
+    ports:
+      - "8501:8501"
+
+  prometheus:
+    build:
+      context: monitoring
+      dockerfile: Dockerfile
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+    depends_on:
+      - tf-serving
+
+  grafana:
+    build:
+      context: monitoring/grafana
+      dockerfile: Dockerfile
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning
+    depends_on:
+      - prometheus
