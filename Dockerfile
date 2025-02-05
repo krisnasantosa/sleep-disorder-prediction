@@ -13,5 +13,3 @@ RUN echo '#!/bin/bash \n\n\
     --monitoring_config_file=${MONITORING_CONFIG} \
     "$@"' > /usr/bin/tf_serving_entrypoint.sh \
     && chmod +x /usr/bin/tf_serving_entrypoint.sh
-
-EXPOSE 8501
