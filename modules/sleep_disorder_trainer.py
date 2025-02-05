@@ -187,7 +187,7 @@ def build_model(hp: dict, tf_transform_output: tft.TFTransformOutput) -> tf.kera
     hidden_layers = _build_hidden_layers(concat_features, hp)
 
     # Output layer
-    outputs = layers.Dense(7, activation='softmax')(hidden_layers)
+    outputs = layers.Dense(3, activation='softmax')(hidden_layers)
 
     model = tf.keras.Model(inputs=numeric_layers +
                            categorical_layers, outputs=outputs)
