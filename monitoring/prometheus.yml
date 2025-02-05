@@ -7,6 +7,6 @@ global:
 scrape_configs:
     - job_name: "prometheus"
       scrape_interval: 5s
-      metrics_path: /monitoring/prometheus/metrics
+      metrics_path: /metrics
       static_configs:
           - targets: ["sleep-disorder-prediction.up.railway.app:8501"]
