@@ -3,8 +3,9 @@ FROM tensorflow/serving:latest
 COPY ./output/serving_model /models/sleep_disorder
 COPY ./config /model_config
 
-ENV MONITORING_CONFIG="/model_config/prometheus.config"
 ENV MODEL_NAME=sleep_disorder
+
+ENV MONITORING_CONFIG="/model_config/prometheus.config"
 ENV PORT=8501
 
 RUN echo '#!/bin/bash \n\n\
